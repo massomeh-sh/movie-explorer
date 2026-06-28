@@ -12,7 +12,7 @@ function MovieList(): JSX.Element {
                 <p className="text-2xl md:text-3xl lg:text-4xl">Searched results for <span
                     className="text-primary">"{state.query}"</span></p>
                 <p className="text-text-secondary md:text-2xl">{state.movies.length} results found</p></div>
-            <div className="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-7 gap-6 md:gap-8">
+            <div className="grid grid-cols-2 md:grid-cols-5 lg:grid-cols-7 gap-6 md:gap-8">
                 {state.movies.map((movie: Movie) => <MovieCard key={movie.id} movie={movie}/>)}
             </div>
         </div>

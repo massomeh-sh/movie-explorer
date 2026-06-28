@@ -13,7 +13,7 @@ function RelatedMovieCard({movie}: RelatedMovieCardProps): JSX.Element {
 
     return (
         <div
-            className="bg-card p-2 group relative overflow-hidden rounded-2xl border border-black min-w-1/3">
+            className="bg-card p-2 group relative overflow-hidden rounded-2xl border border-black w-40 flex-none">
             <div className="aspect-[2/3] rounded-lg">
                 <img src={`${IMAGE_BASE_URL}${poster_path}`} alt="movie picture"
                      className="h-full w-full object-cover mb-1"/>

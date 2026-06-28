@@ -52,10 +52,10 @@ function Header(): JSX.Element {
                 </button>
                 <input value={inputSearch} onChange={(e) => setInputSearch(e.target.value)} name="search" type="text"
                        placeholder="Search for movie, TV shows.."
-                       className="w-full py-4 px-3 pl-2 outline-none text-lg text-sm md:text-lg"/>
+                       className="w-full py-4 px-3 pl-2 outline-none text-sm md:text-lg"/>
             </form>
         </div>
     );
-}
+}59
 
 export default Header;
