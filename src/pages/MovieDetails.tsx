@@ -87,8 +87,10 @@ function MovieDetails(): JSX.Element {
                             <InfoRow label="Release" value={formattedDate}/>
                         </div>
                     </div>
-                    <h3 className="text-2xl m-2 ">Similar Movies</h3>
-                    <SimilarMovies relatedMovies={relatedMovies}/>
+                    <div className="py-4">
+                        <h3 className="text-2xl mb-4">Similar Movies</h3>
+                        <SimilarMovies relatedMovies={relatedMovies}/>
+                    </div>
                 </div>
             </div>
             <div className="hidden md:block bg-bg text-white">

@@ -32,7 +32,7 @@ function SavedMovieCard({movie}: SavedMovieCardProps): JSX.Element {
         <div
             className="flex items-center justify-between gap-5 border border-white/10 p-4 md:p-3 hover:border-violet-500 transition">
             <div className="flex gap-10">
-                <img className="aspect-[2/3] w-40 object-cover shadow-xl"
+                <img className="aspect-[2/3] w-25 md:w-40 object-cover shadow-xl"
                      src={`${IMAGE_BASE_URL}${movie.poster_path}`}/>
                 <div className="flex flex-col gap-2">
                     <h2 className="text-xl mt-7 font-bold">{movie.original_title}</h2>
@@ -40,7 +40,7 @@ function SavedMovieCard({movie}: SavedMovieCardProps): JSX.Element {
                         {year}
                     </p>
                     <p className="text-yellow-400">⭐ {movie.vote_average.toFixed(1)} <span
-                        className="text-text-secondary">IMDb</span></p>
+                        className="text-text-secondary text-sm">IMDb</span></p>
                 </div>
             </div>
             <div className="flex gap-2">
@@ -50,7 +50,7 @@ function SavedMovieCard({movie}: SavedMovieCardProps): JSX.Element {
                     <div className="text-lg md:text-3xl text-white">
                         <GrView/>
                     </div>
-                    <span className="">View Details</span>
+                    <span className="text-sm md:text-lg">View Details</span>
                 </button>
                 <button
                     onClick={() => handleDeleteMovie(movie.id)}

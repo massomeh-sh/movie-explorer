@@ -27,7 +27,7 @@ function SavedMovies(): JSX.Element {
                     onClick={handleDeleteAllSavedMovies}
                     className="cursor-pointer p-3 rounded-lg border border-white/10 hover:bg-card text-text-secondary flex gap-2 items-center">
                     <MdOutlineDeleteForever size={20}/>
-                    <span className="text-lg md:text-2xl">Clear All</span>
+                    <span className="text-sm md:text-2xl">Clear All</span>
                 </button>
             </div>
             {state.savedMovies.length === 0 &&

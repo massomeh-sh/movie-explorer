@@ -27,7 +27,7 @@ function MovieCard({movie}: CardProps): JSX.Element {
             <SavedButton movie={movie}/>
             <img src={`${IMAGE_BASE_URL}${poster_path}`} alt="movie picture"
                  className="aspect-2/3 w-full object-cover mb-3"/>
-            <div className="flex flex-col gap-4 ">
+            <div className="flex flex-col gap-2 md:gap-4">
                 <div className="space-y-2">
                     <h3 className="truncate font-semibold text-2xl">{original_title}</h3>
                 </div>
