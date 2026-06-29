@@ -19,12 +19,11 @@ function SimilarMovies({relatedMovies}: SimilarMoviesProps): JSX.Element {
 
         setShowLeftArrow(scrollLeft > 0);
 
-        const isEnd = scrollLeft + clientWidth >= scrollWidth;
+        const isEnd = scrollLeft + clientWidth >= scrollWidth - 1;
         setShowRightArrow(!isEnd);
     };
 
     const scrollLeft = () => {
-        console.log("clickedLeft");
         sliderRef.current?.scrollBy({
             left: -300,
             behavior: "smooth",
@@ -32,8 +31,6 @@ function SimilarMovies({relatedMovies}: SimilarMoviesProps): JSX.Element {
     };
 
     const scrollRight = () => {
-        console.log("clickedRight");
-        console.log(sliderRef.current);
         sliderRef.current?.scrollBy({
             left: 300,
             behavior: "smooth",
@@ -56,7 +53,8 @@ function SimilarMovies({relatedMovies}: SimilarMoviesProps): JSX.Element {
             )}
 
             <div className="relative w-full">
-                <div ref={sliderRef} onScroll={updateArrows} className="flex gap-4 overflow-x-auto scrollbar-none scroll-smooth">
+                <div ref={sliderRef} onScroll={updateArrows}
+                     className="flex gap-4 overflow-x-auto scrollbar-none scroll-smooth">
                     {relatedMovies.map((movie) => (
                         <RelatedMovieCard key={movie.id} movie={movie}/>
                     ))}
