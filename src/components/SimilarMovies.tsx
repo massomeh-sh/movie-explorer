@@ -15,7 +15,6 @@ function SimilarMovies({relatedMovies}: SimilarMoviesProps): JSX.Element {
 
     const updateArrows = () => {
         if (!sliderRef.current) return;
-
         const {scrollLeft, scrollWidth, clientWidth} = sliderRef.current;
 
         setShowLeftArrow(scrollLeft > 0);
@@ -25,6 +24,7 @@ function SimilarMovies({relatedMovies}: SimilarMoviesProps): JSX.Element {
     };
 
     const scrollLeft = () => {
+        console.log("clickedLeft");
         sliderRef.current?.scrollBy({
             left: -300,
             behavior: "smooth",
@@ -32,6 +32,8 @@ function SimilarMovies({relatedMovies}: SimilarMoviesProps): JSX.Element {
     };
 
     const scrollRight = () => {
+        console.log("clickedRight");
+        console.log(sliderRef.current);
         sliderRef.current?.scrollBy({
             left: 300,
             behavior: "smooth",
@@ -47,14 +49,14 @@ function SimilarMovies({relatedMovies}: SimilarMoviesProps): JSX.Element {
             {showLeftArrow && (
                 <button
                     onClick={scrollLeft}
-                    className="absolute left-2 top-1/2 -translate-y-1/2 z-10"
+                    className="cursor-pointer absolute left-2 top-1/2 -translate-y-1/2 z-10"
                 >
                     <FaChevronLeft size={30}/>
                 </button>
             )}
 
             <div className="relative w-full">
-                <div className="flex gap-4 overflow-x-auto scroll-snap-x scroll-smooth">
+                <div ref={sliderRef} onScroll={updateArrows} className="flex gap-4 overflow-x-auto scrollbar-none scroll-smooth">
                     {relatedMovies.map((movie) => (
                         <RelatedMovieCard key={movie.id} movie={movie}/>
                     ))}
@@ -64,7 +66,7 @@ function SimilarMovies({relatedMovies}: SimilarMoviesProps): JSX.Element {
             {showRightArrow && (
                 <button
                     onClick={scrollRight}
-                    className="absolute right-2 top-1/2 -translate-y-1/2 z-10"
+                    className="absolute right-2 top-1/2 -translate-y-1/2 z-10 cursor-pointer"
                 >
                     <FaChevronRight size={30}/>
                 </button>

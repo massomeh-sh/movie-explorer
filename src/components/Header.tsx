@@ -35,7 +35,7 @@ function Header(): JSX.Element {
 
     return (
         <div
-            className="flex gap-8 md:gap-100 lg-150 xl:gap-200 xlg:gap-250 py-8 px-5 md:py-10 md:px-8 items-center border-b border-white/10">
+            className="flex gap-10 md:gap-100 lg-150 xl:gap-200 xlg:gap-250 py-8 px-5 md:py-10 md:px-8 items-center border-b border-white/10">
             <div className="flex gap-5 md:gap-5">
                 <SideBar/>
                 <div className="flex gap-2 items-center">
@@ -48,9 +48,7 @@ function Header(): JSX.Element {
             </div>
             <form onSubmit={handleForm} className="w-full flex items-center border border-gray-400 rounded-xl px-4">
                 <button type="submit">
-                    <div className="text-[12px] md:text-2xl cursor-pointer text-grey-400">
-                        <IoSearchOutline/>
-                    </div>
+                    <IoSearchOutline size={20} className="cursor-pointer text-grey-400"/>
                 </button>
                 <input value={inputSearch} onChange={(e) => setInputSearch(e.target.value)} name="search" type="text"
                        placeholder="Search for movie, TV shows.."
@@ -58,6 +56,6 @@ function Header(): JSX.Element {
             </form>
         </div>
     );
-}
+}59
 
 export default Header;
